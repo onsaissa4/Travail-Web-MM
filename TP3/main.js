@@ -1,8 +1,7 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const index_1 = require("./index");
-console.log((0, index_1.add)(5, 3));
-console.log((0, index_1.subtract)(10, 4));
+// main.ts
+import { add, subtract } from "./index.js"; // ✅ ajouter .js même si c'est du TypeScript
+console.log(add(5, 3));
+console.log(subtract(10, 4));
 const u = {
     id: 1,
     name: "Ons"

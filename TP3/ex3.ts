@@ -1,20 +1,31 @@
+// ID peut être number ou string
 let id: number | string = 123;
 id = "ABC123";
 
+// Types pour obj
 type A = { x: number };
 type B = { y: string };
 type C = A & B;
-let obj: C = { x: 10, y: "hello" };
+const obj: C = { x: 10, y: "hello" };
 
-
+// Status
 type Status = "pending" | "done" | "canceled";
-let currentStatus: Status = "pending";
+const currentStatus: Status = "pending";
 
+// Valeur inconnue
+const unknownValue: unknown = "test";
+const strLength: number = (unknownValue as string).length; // renommé pour éviter conflit
 
-let unknownValue: unknown = "test";
+function printInfo() {
+  console.log("ID:", id);
+  console.log("Object:", obj);
+  console.log("Current status:", currentStatus);
+  console.log("Unknown value:", unknownValue);
+  console.log("Length of unknownValue (casted to string):", strLength);
 
-let length: number = (unknownValue as string).length;
-
-if (typeof unknownValue === "string") {
-  console.log(unknownValue.length);
+  if (typeof unknownValue === "string") {
+    console.log("Length via typeof check:", unknownValue.length);
+  }
 }
+
+printInfo();

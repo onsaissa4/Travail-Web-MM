@@ -1,11 +1,11 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// --- Fonctions génériques ---
 function identity(value) {
     return value;
 }
 function getFirst(arr) {
     return arr[0];
 }
+// --- Classe générique Repository ---
 class Repository {
     items = [];
     add(item) {
@@ -18,16 +18,23 @@ class Repository {
         return this.items;
     }
 }
-const a = identity(10);
-const b = identity("Hello");
-console.log(getFirst([1, 2, 3]));
-console.log(getFirst(["a", "b", "c"]));
-const repo = new Repository();
-repo.add(10);
-repo.add(20);
-repo.remove(10);
-console.log(repo.getAll());
-const response = {
-    data: [1, 2, 3]
-};
+function main() {
+    const a = identity(10);
+    const b = identity("Hello");
+    console.log("Identity a:", a);
+    console.log("Identity b:", b);
+    console.log("First number:", getFirst([1, 2, 3]));
+    console.log("First string:", getFirst(["a", "b", "c"]));
+    const repo = new Repository();
+    repo.add(10);
+    repo.add(20);
+    repo.remove(10);
+    console.log("Repository items:", repo.getAll());
+    const response = {
+        data: [1, 2, 3]
+    };
+    console.log("API response data:", response.data);
+}
+main();
+export {};
 //# sourceMappingURL=ex7.js.map

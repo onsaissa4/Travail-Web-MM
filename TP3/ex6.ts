@@ -1,3 +1,4 @@
+// --- Classes de base ---
 class Person {
   name: string;
   age: number;
@@ -25,6 +26,7 @@ class Student extends Person {
   }
 }
 
+// --- Classes Shape ---
 abstract class Shape {
   abstract area(): number;
 }
@@ -57,6 +59,7 @@ class Rectangle extends Shape {
   }
 }
 
+// --- Interface Drivable et classe Car ---
 interface Drivable {
   drive(): string;
 }
@@ -72,3 +75,28 @@ class Car implements Drivable {
     return `Driving a ${this.brand}`;
   }
 }
+
+// --- UTILISATION (main) ---
+function main() {
+  // Person & Student
+  const person = new Person("John", 30);
+  console.log(person.greet());
+
+  const student = new Student("Alice", 20, "Harvard");
+  console.log(student.greet());
+  console.log(student.study());
+
+  // Shapes
+  const circle = new Circle(5);
+  console.log("Circle area:", circle.area());
+
+  const rectangle = new Rectangle(4, 6);
+  console.log("Rectangle area:", rectangle.area());
+
+  // Car
+  const car = new Car("Toyota");
+  console.log(car.drive());
+}
+
+// Appel de la fonction principale
+main();

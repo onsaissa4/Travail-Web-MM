@@ -1,5 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
+// --- Classes de base ---
 class Person {
     name;
     age;
@@ -21,6 +20,7 @@ class Student extends Person {
         return `${this.name} is studying at ${this.school}`;
     }
 }
+// --- Classes Shape ---
 class Shape {
 }
 class Circle extends Shape {
@@ -54,4 +54,24 @@ class Car {
         return `Driving a ${this.brand}`;
     }
 }
+// --- UTILISATION (main) ---
+function main() {
+    // Person & Student
+    const person = new Person("John", 30);
+    console.log(person.greet());
+    const student = new Student("Alice", 20, "Harvard");
+    console.log(student.greet());
+    console.log(student.study());
+    // Shapes
+    const circle = new Circle(5);
+    console.log("Circle area:", circle.area());
+    const rectangle = new Rectangle(4, 6);
+    console.log("Rectangle area:", rectangle.area());
+    // Car
+    const car = new Car("Toyota");
+    console.log(car.drive());
+}
+// Appel de la fonction principale
+main();
+export {};
 //# sourceMappingURL=ex6.js.map
